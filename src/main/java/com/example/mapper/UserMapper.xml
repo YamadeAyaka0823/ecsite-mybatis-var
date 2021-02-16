@@ -5,4 +5,7 @@
 		insert into users (name, email, password, zipcode, address, telephone) values (#{name},
 		#{email}, #{password}, #{zipcode}, #{address}, #{telephone})
 	</insert>
+	<select id="findByMailAddress" resultType="com.example.domain.User">
+		select * from users where email = #{email}
+	</select>
 </mapper>

@@ -1,6 +1,7 @@
 package com.example.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -15,6 +16,9 @@ public class UserService {
 	@Autowired
 	private UserMapper userMapper;
 	
+	@Autowired
+	private PasswordEncoder passwordEncoder;
+	
 	/**
 	 * ユーザーを新規登録する.
 	 * @param form
@@ -24,7 +28,7 @@ public class UserService {
 		user.setName(form.getName());
 		user.setEmail(form.getEmail());
 		user.setAddress(form.getAddress());
-		user.setPassword(form.getPassword());
+		user.setPassword(passwordEncoder.encode(form.getPassword()));
 		user.setTelephone(form.getTelephone());
 		user.setZipcode(form.getZipcode());
 		userMapper.insert(user);

@@ -12,5 +12,12 @@ public interface UserMapper {
 	 * @param user
 	 */
 	void insert(User user);
+	
+	/**
+	 * ユーザーをメールアドレスで1件検索する.
+	 * @param email
+	 * @return
+	 */
+	User findByMailAddress(String email);
 
 }
