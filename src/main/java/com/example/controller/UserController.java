@@ -7,6 +7,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.form.UserRegisterForm;
 import com.example.service.UserService;
@@ -26,8 +27,11 @@ public class UserController {
 	 * ログイン初期画面.
 	 * @return
 	 */
-	@RequestMapping("/")
-	public String index() {
+	@RequestMapping("/toLogin")
+	public String toLogin(Model model,@RequestParam(required = false) String error) {
+		if (error != null) {
+			model.addAttribute("errorMessage", "メールアドレスまたはパスワードが不正です。");
+		}
 		return "login";
 	}
 	
