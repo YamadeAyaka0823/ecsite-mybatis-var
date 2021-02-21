@@ -26,6 +26,15 @@ public class ItemService {
 	}
 	
 	/**
+	 * 商品IDで商品を1件検索する.
+	 * @param itemId
+	 * @return
+	 */
+	public Item findByItemId(Integer itemId) {
+		return itemMapper.findByItemId(itemId);
+	}
+	
+	/**
 	 * 商品を３つずつ表示させるロジック.
 	 * @param itemList
 	 * @return

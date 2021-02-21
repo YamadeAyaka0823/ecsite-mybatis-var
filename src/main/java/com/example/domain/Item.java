@@ -20,6 +20,6 @@ public class Item {
 	/** 商品画像パス */
 	private String image_path;
 	/** トッピングリスト */
-	private List<Topping> toppingList;
+	private List<List<Topping>> toppingList;
 
 }

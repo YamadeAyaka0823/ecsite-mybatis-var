@@ -14,5 +14,12 @@ public interface ItemMapper {
 	 * @return
 	 */
 	List<Item> findAll();
+	
+	/**
+	 * 商品IDで商品を1件検索する.
+	 * @param itemId
+	 * @return
+	 */
+	Item findByItemId(Integer itemId);
 
 }

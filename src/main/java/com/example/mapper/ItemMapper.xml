@@ -4,4 +4,7 @@
 	<select id="findAll" resultType="com.example.domain.Item">
 		select * from items order by id
 	</select>
+	<select id="findByItemId" resultType="com.example.domain.Item">
+		select * from items where id = #{itemId}
+	</select>
 </mapper>
