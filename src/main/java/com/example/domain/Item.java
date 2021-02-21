@@ -14,11 +14,11 @@ public class Item {
 	/** 商品の説明 */
 	private String description;
 	/** 価格(M) */
-	private Integer priceM;
+	private Integer price_m;
 	/** 価格(L) */
-	private Integer priceL;
+	private Integer price_l;
 	/** 商品画像パス */
-	private String imagePath;
+	private String image_path;
 	/** トッピングリスト */
 	private List<Topping> toppingList;
 
